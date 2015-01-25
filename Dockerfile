@@ -42,3 +42,10 @@ ADD restore.sh /usr/local/bin/restore
 ADD cron_backup.sh /usr/local/bin/cron_backup
 ADD cron_daily.sh /etc/cron.daily/backup_incremental
 ADD cron_weekly.sh /etc/cron.weekly/backup_full
+
+RUN \
+    chmod 755 /usr/local/bin/backup && \
+    chmod 755 /usr/local/bin/restore && \
+    chmod 755 /usr/local/bin/cron_backup && \
+    chmod 755 /etc/cron.daily/backup_incremental && \
+    chmod 755 /etc/cron.weekly/backup_full
