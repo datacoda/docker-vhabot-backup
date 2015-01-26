@@ -37,13 +37,18 @@ ENV \
     AWS_ACCESS_KEY_ID=secretid \
     AWS_SECRET_ACCESS_KEY=secretkey
 
-ADD backup.sh /usr/local/bin/backup
-ADD restore.sh /usr/local/bin/restore
-ADD cron_backup.sh /usr/local/bin/cron_backup
-ADD cron_daily.sh /etc/cron.daily/backup_incremental
-ADD cron_weekly.sh /etc/cron.weekly/backup_full
+# Configure
+RUN mkdir /etc/my_init.d -p
+COPY config.sh /etc/my_init.d/config.sh
+
+COPY backup.sh /usr/local/bin/backup
+COPY restore.sh /usr/local/bin/restore
+COPY cron_backup.sh /usr/local/bin/cron_backup
+COPY cron_daily.sh /etc/cron.daily/backup_incremental
+COPY cron_weekly.sh /etc/cron.weekly/backup_full
 
 RUN \
+    chmod 755 /etc/my_init.d/config.sh && \
     chmod 755 /usr/local/bin/backup && \
     chmod 755 /usr/local/bin/restore && \
     chmod 755 /usr/local/bin/cron_backup && \

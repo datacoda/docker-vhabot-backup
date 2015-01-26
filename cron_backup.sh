@@ -9,7 +9,7 @@ trap finish EXIT
 
 backup_type=${1:-incremental}
 
-/usr/local/bin/duplicity $backup_type --allow-source-mismatch $SOURCE_DIR $REMOTE_URL > $output 2>&1 | logger -t backup
+/usr/local/bin/duplicity $backup_type --allow-source-mismatch $SOURCE_DIR $REMOTE_URL > $output 2>&1
 
 code=$?
 
