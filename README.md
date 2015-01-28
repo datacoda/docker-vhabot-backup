@@ -1,5 +1,7 @@
 dataferret/vhabot-backup
 ========================
+![Latest tag](https://img.shields.io/github/tag/dataferret/docker-vhabot-backup.svg?style=flat)
+![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
 Sidecar Docker container for Anarchy Online Vhabot.  It's assumes that /var/lib/vhabot/config.d
 is located on a volume container to which this backup container will be granted volume access.
@@ -8,8 +10,7 @@ Duplicity installation based off
 [cjhardekopf/duplicity](https://github.com/cjhardekopf/docker-duplicity)
 
 
-Usage
------
+### Usage
 
 Just start up the container.
 
@@ -37,11 +38,15 @@ Since there is a cron job that initiates a backup, it's probably best to run wit
 instead when doing restores. There is no guard against it starting a backup on an empty dir.
 
 
-Notes
------
+### Notes
 
 Tested only with US Standard S3 buckets.
 
 This is mostly a cobbled together a proof of concept that works fine for my needs.  If you have
 any specific needs that aren't met - like another S3 region or backend, feel free to fork and
 file a feature issue.
+
+
+### License
+
+MIT
