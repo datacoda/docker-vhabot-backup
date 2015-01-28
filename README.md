@@ -18,7 +18,7 @@ Just start up the container.
             -e REMOTE_URL=s3+http://mys3bucket/vhabot/ \
             -e AWS_ACCESS_KEY_ID=key \
             -e AWS_SECRET_ACCESS_KEY=secret \
-            -e PASSPHRASE
+            -e PASSPHRASE=symmetric \
             dataferret/vhabot-backup
 
 It's scheduled to do daily incremental backups.  Weekly full backups. There is currently no
@@ -32,6 +32,9 @@ A restore script is also provided that will move the contents of the existing co
 folder to /var/backup and pull down the latest from the duplicity set.
 
         docker exec -it vhabot-backup restore
+
+Since there is a cron job that initiates a backup, it's probably best to run with a bash command 
+instead when doing restores. There is no guard against it starting a backup on an empty dir.
 
 
 Notes
