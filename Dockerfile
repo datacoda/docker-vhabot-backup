@@ -30,12 +30,11 @@ RUN export VERSION=0.6.25 && \
     rm -rf /tmp/* /var/tmp/*
 
 # Exposed environments
-ENV \
-    SOURCE_DIR=/var/lib/vhabot/config.d \
-    REMOTE_URL=s3+http://bucket/ \
-    PASSPHRASE=symmetric \
-    AWS_ACCESS_KEY_ID=secretid \
-    AWS_SECRET_ACCESS_KEY=secretkey
+ENV SOURCE_DIR=/var/lib/vhabot/config.d
+ENV REMOTE_URL=s3+http://bucket/
+ENV PASSPHRASE=symmetric
+ENV AWS_ACCESS_KEY_ID=secretid
+ENV AWS_SECRET_ACCESS_KEY=secretkey
 
 # Configure
 RUN mkdir /etc/my_init.d -p
