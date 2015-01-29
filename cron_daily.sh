@@ -1,3 +1,3 @@
 #!/bin/bash
-. /root/.cronfile
+. /etc/container_environment.sh
 cron_backup incremental
