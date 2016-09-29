@@ -1,6 +1,6 @@
-dataferret/vhabot-backup
+datacoda/vhabot-backup
 ========================
-![Latest tag](https://img.shields.io/github/tag/dataferret/docker-vhabot-backup.svg?style=flat)
+![Latest tag](https://img.shields.io/github/tag/datacoda/docker-vhabot-backup.svg?style=flat)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
 Sidecar Docker container for Anarchy Online Vhabot.  It's assumes that /var/lib/vhabot/config.d
@@ -20,7 +20,7 @@ Just start up the container.
             -e AWS_ACCESS_KEY_ID=key \
             -e AWS_SECRET_ACCESS_KEY=secret \
             -e PASSPHRASE=symmetric \
-            dataferret/vhabot-backup
+            datacoda/vhabot-backup
 
 It's scheduled to do daily incremental backups.  Weekly full backups. There is currently no
 cleaning nor removal of older backup sets.
