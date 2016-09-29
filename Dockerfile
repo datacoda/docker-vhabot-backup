@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.16
-MAINTAINER Ted Chen <ted@nephilagraphic.com>
+MAINTAINER Li-Te Chen <datacoda@gmail.com>
 
 # Set correct environment variables.
 ENV HOME /root
